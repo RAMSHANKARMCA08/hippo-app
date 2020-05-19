@@ -6,8 +6,8 @@ pipeline {
             steps { git 'https://github.com/RAMSHANKARMCA08/hippo-app.git' }
         }
 	stage('Build') {
-	            steps { sh label: '', script: 'mvn clean'
-		            sh label: '', script: 'mvn install'}
+	            steps { sh label: '', script: '/usr/local/src/apache-maven/bin/mvn clean'
+		            sh label: '', script: '/usr/local/src/apache-maven/bin/mvn install'}
 		            }
 
      
