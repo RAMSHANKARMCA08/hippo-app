@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
 		    sh 'echo $(whoami)'
-		    sh 'sudo usermod -aG docker $(whoami)'
-		    sh 'sudo chown $(whoami) /var/run/docker.sock'
+		    sh 'usermod -aG docker $(whoami)'
+		    sh 'chown $(whoami) /var/run/docker.sock'
                     app = docker.build("a2zram/balajidemo")
                     app.inside {
                         sh 'echo $(curl localhost:7070)'
