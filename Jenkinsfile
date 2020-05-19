@@ -14,7 +14,7 @@ pipeline {
 	    stage('Build Docker Image') {
             steps {
                 script {
-		    sh 'echo $whoami'
+		    sh 'echo $(whoami)'
 		    sh 'sudo usermod -aG docker $(whoami)'
 		    sh 'sudo chown $(whoami) /var/run/docker.sock'
                     app = docker.build("a2zram/balajidemo")
