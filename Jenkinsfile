@@ -14,7 +14,7 @@ pipeline {
 	    stage('Build Docker Image') {
             steps {
                 script {
-                    app = docker.build("a2zram/balajiDemo")
+                    app = docker.build("a2zram/balajidemo")
                     app.inside {
                         sh 'echo $(curl localhost:7070)'
                     }
