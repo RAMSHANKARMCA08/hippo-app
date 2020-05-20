@@ -11,10 +11,7 @@ pipeline {
 		            }
 
         stage('Build Docker Image') {
-            when {
-                branch 'master'
-            }
-            steps {
+           steps {
                 script {
                     app = docker.build("a2zram/hippo2")
                     app.inside {
