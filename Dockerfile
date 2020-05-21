@@ -1,7 +1,5 @@
-# we are extending everything from tomcat:8.0 image ...
-FROM tomcat:9.0
-MAINTAINER ram
-# COPY path-to-your-application-war path-to-webapps-in-docker-tomcat
-#COPY **/*.war /usr/local/tomcat/webapps/
-copy target/hippo-app.war /usr/local/tomcat/
+FROM httpd:2.4
+MAINTAINER RamSoftTech
+COPY **/*.war /usr/local/apache2/htdocs/
+CMD ["httpd-foreground"]
 EXPOSE 7070
